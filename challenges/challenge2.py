@@ -29,3 +29,19 @@ What changes would you recommend to enhance security and minimize excessive acce
 # -*- coding: utf-8 -*-
 
 """
+
+finance_access = {"E0435", "E1021", "E3098", "E7642", "E8873", "E6590"}
+tech_access = {"E7642", "E8873", "E6590", "E9812", "E4520"}
+admin = "E0001"
+new_employee = "E9999"
+
+access_to_at_least_one_type_of_data = finance_access | tech_access
+both_access = finance_access & tech_access
+finance_only = finance_access - tech_access
+tech_only = tech_access - finance_access
+all_employees = finance_access | tech_access | {admin} | {new_employee}
+lack_access = all_employees - (finance_access | tech_access | {admin})
+security_risk = both_access
+
+if both_access:
+  print ("Reduce the risk of excessive access. Implement a role-based access control. Define roles (e.g., 'Finance', 'Tech', 'Finance & Tech') and assign employees to roles")
