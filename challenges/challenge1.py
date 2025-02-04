@@ -27,9 +27,9 @@ Interpret what the final expression means in the context of allowing or blocking
 
 """
 def main():
-  login_check(False,False)
+  login_check(True,False)
 def login_check(user_details,device_details):
   e1 = device_details or not device_details #complementary law
   e2 = user_details and e1
   return not e2
-print(login_check(False,False))
+print(login_check(True,False))
